@@ -6,13 +6,14 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 16:02:11 by juhur             #+#    #+#             */
-/*   Updated: 2023/04/06 16:13:02 by juhur            ###   ########.fr       */
+/*   Updated: 2023/04/07 10:57:39 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
 int main(int ac, char** av) {
+  (void)av;
   if (ac < 2) {
     std::cout << "Error\n";
     return 1;
