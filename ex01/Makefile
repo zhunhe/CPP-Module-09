@@ -6,7 +6,7 @@
 #    By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 16:01:53 by juhur             #+#    #+#              #
-#    Updated: 2023/04/06 16:01:58 by juhur            ###   ########.fr        #
+#    Updated: 2023/04/09 01:46:27 by juhur            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS = \
 	main.cpp \
+	RPN.cpp \
 
 %.o : %.cpp
 	$(CXX) $(CXXFLAGS) $^ -c -o $@
