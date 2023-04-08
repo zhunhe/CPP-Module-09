@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 02:11:08 by juhur             #+#    #+#             */
-/*   Updated: 2023/04/09 02:11:09 by juhur            ###   ########.fr       */
+/*   Updated: 2023/04/09 02:34:45 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,8 @@
 
 RPN::RPN() {}
 
-RPN::RPN(const std::string& expression) {
-  this->expression = expression;
-}
+RPN::RPN(const std::string& expression)
+: expression(expression) {}
 
 RPN::RPN(const RPN& obj) {
   *this = obj;
