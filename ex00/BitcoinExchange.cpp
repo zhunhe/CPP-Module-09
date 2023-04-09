@@ -1,7 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/09 12:00:15 by juhur             #+#    #+#             */
+/*   Updated: 2023/04/09 12:02:53 by juhur            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
+#include <exception>
 #include <algorithm>
 #include "BitcoinExchange.hpp"
 

@@ -6,11 +6,12 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 02:11:08 by juhur             #+#    #+#             */
-/*   Updated: 2023/04/09 02:34:45 by juhur            ###   ########.fr       */
+/*   Updated: 2023/04/09 12:04:22 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <stdexcept>
 #include "RPN.hpp"
 
 RPN::RPN() {}
@@ -79,8 +80,7 @@ void RPN::calculate(char arithmeticOperator) {
 }
 
 void RPN::print() {
-  if (this->stack.size() != 1) {
+  if (this->stack.size() != 1)
     throw std::invalid_argument("Error: Cannot print invalid expression");
-  }
   std::cout << this->stack.top() << std::endl;
 }
