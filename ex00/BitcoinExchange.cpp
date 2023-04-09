@@ -6,7 +6,7 @@
 /*   By: juhur <juhur@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/09 12:00:15 by juhur             #+#    #+#             */
-/*   Updated: 2023/04/09 12:02:53 by juhur            ###   ########.fr       */
+/*   Updated: 2023/04/09 12:40:33 by juhur            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ BitcoinExchange::BitcoinExchange(const std::string& inputFile)
     std::istringstream rateStream(rawRate.c_str());
     double rate;
     rateStream >> rate;
-    if (rateStream.fail() == true) {
+    if (rateStream.fail() == true || rateStream.eof() == true) {
       data.close();
       throw std::runtime_error("Error: bad input data =>" + line);
     }
@@ -117,7 +117,7 @@ void BitcoinExchange::process() {
       std::istringstream valueStream(rawValue.c_str());
       double value;
       valueStream >> value;
-      if (valueStream.fail() == true)
+      if (valueStream.fail() == true || valueStream.eof() == true)
         throw std::runtime_error("Error: bad input => " + line);
 
       checkDate(date);
@@ -168,7 +168,7 @@ static int checkYear(const std::string& rawYear, const std::string& date) {
   std::istringstream yearStream(rawYear.c_str());
   int year;
   yearStream >> year;
-  if (yearStream.fail() == true)
+  if (yearStream.fail() == true || yearStream.eof() == true)
     throw std::runtime_error("Error: bad date year => " + date);
   return year;
 }
@@ -179,7 +179,7 @@ static int checkMonth(const std::string& rawMonth, const std::string& date) {
   std::istringstream monthStream(rawMonth.c_str());
   int month;
   monthStream >> month;
-  if (monthStream.fail() == true)
+  if (monthStream.fail() == true || monthStream.eof() == true)
     throw std::runtime_error("Error: bad date month => " + date);
   if (month < 1 || month > 12)
     throw std::runtime_error("Error: bad date month => " + date);
@@ -192,7 +192,7 @@ static void checkDay(const std::string& rawDay, const std::string& date, const i
   std::istringstream dayStream(rawDay.c_str());
   int day;
   dayStream >> day;
-  if (dayStream.fail() == true)
+  if (dayStream.fail() == true || dayStream.eof() == true)
     throw std::runtime_error("Error: bad date day => " + date);
   if (day < 1)
     throw std::runtime_error("Error: bad date day => " + date);
